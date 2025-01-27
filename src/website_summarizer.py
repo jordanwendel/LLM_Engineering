@@ -1,5 +1,5 @@
-from language_models.ollama import *
-from language_models.open_ai import *
+from language_models.ollama import queryOllama
+from language_models.open_ai import queryOpenAI
 from IPython.display import Markdown, display
 from models.website import Website
 
