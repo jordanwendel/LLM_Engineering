@@ -1,5 +1,5 @@
-from language_models.ollama import queryOllama
-from language_models.open_ai import queryOpenAI
+from language_models.ollama import query_ollama
+from language_models.open_ai import query_open_ai
 from IPython.display import Markdown, display
 from models.website import Website
 
@@ -9,11 +9,11 @@ def display_summary_markdown(url):
 
 def summarize_website_ollama(url):
     website = Website(url)
-    return queryOllama("llama3.2", messages_for(website))
+    return query_ollama("llama3.2", messages_for(website))
 
 def summarize_website_open_ai(url):
     website = Website(url)
-    return queryOpenAI("gpt-4o-mini", messages_for(website))
+    return query_open_ai("gpt-4o-mini", messages_for(website))
 
 def messages_for(website):
     system_prompt = "You are an assistant that analyzes the contents of a website and provides a short summary, \
