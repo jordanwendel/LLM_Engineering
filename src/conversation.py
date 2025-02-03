@@ -27,14 +27,12 @@ def call_claude():
     return query_anthropic("claude-3-haiku-20240307", claude_system, messages)
 
 
-
 print(f"GPT:\n {gpt_messages[0]}\n")
 print(f"Claude:\n {claude_messages[0]}\n")
 
 for i in range(5):
     gpt_next = call_gpt()
     print(f"GPT:\n {gpt_next}\n")
-
     gpt_messages.append(gpt_next)
     
     claude_next = call_claude()
